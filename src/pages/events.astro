@@ -8,7 +8,7 @@ import NewsGrid from '../components/NewsGrid.astro';
   <section class="page-hero">
     <div class="container">
       <h1 class="display-title">What's Happening</h1>
-      <p>The SMS PTO brings our school community together through events that celebrate and support SMS families, students, and teachers.</p>
+      <p>The SMS PTO brings our school community together through events that celebrate and support the SMS families, students, and teachers.</p>
     </div>
   </section>
 
@@ -16,23 +16,8 @@ import NewsGrid from '../components/NewsGrid.astro';
 
   <section class="section section-cream">
     <div class="container">
-      <NewsGrid limit={4} />
+      <NewsGrid limit={4} compact={true} />
       <div class="center"><a class="button button-outline" href="/news">View all news</a></div>
-    </div>
-  </section>
-
-  <section class="section calendar-section">
-    <div class="container split split-wide">
-      <h2 class="section-title">Upcoming Dates</h2>
-      <div class="calendar-card">
-        <p class="calendar-kicker">SMS PTO Calendar</p>
-        <div class="calendar-date"><strong>26</strong><span>SEP<br />SAT</span></div>
-        <div>
-          <h3>Soaring Eagle Bazaar</h3>
-          <p>10:00 am–2:00 pm<br />Sharon Middle School</p>
-        </div>
-        <a class="button button-small" href="https://drive.google.com/file/d/1bO_slkvNcLussbZuy4UcYtBmVcZH599Y/view">View SMS Calendar</a>
-      </div>
     </div>
   </section>
 
@@ -43,13 +28,13 @@ import NewsGrid from '../components/NewsGrid.astro';
         <p class="lead">Parents, guardians, and staff are welcome! Join us to stay informed, share ideas, and get involved in the programs that make SMS such a great place to learn and grow.</p>
         <p>Meetings are typically held at the Sharon Middle School Library at 7:00 pm unless otherwise noted.</p>
         <ul class="meeting-list">
-          <li><span>September 9</span><a href="https://c7b909f4-d13c-466d-a683-b19c81a7d16e.filesusr.com/ugd/88c316_ab57899bec8b4f34839596c8196664ae.pdf">Meeting Minutes</a></li>
-          <li><span>October 14</span><a href="https://smspto.wixsite.com/smspto/post/october-14-meeting">Meeting Minutes</a></li>
-          <li><span>November 18</span><span>Guest Speaker Dr. Joel Jocelyn</span></li>
-          <li><span>February 24</span><span>Special guest SMS Student Council</span></li>
-          <li><span>March 17</span><span>World Language Coordinator and Dean of Student Affairs</span></li>
-          <li><span>May 5</span><span>Members of the Sharon School Committee</span></li>
-          <li><span>June 2</span><span>Welcome 5th Grade Parents to SMS</span></li>
+          <li><span>September 9:</span><a href="https://c7b909f4-d13c-466d-a683-b19c81a7d16e.filesusr.com/ugd/88c316_ab57899bec8b4f34839596c8196664ae.pdf">Meeting Minutes</a></li>
+          <li><span>October 14:</span><a href="https://smspto.wixsite.com/smspto/post/october-14-meeting">Meeting Minutes</a></li>
+          <li><span>November 18:</span><span>Guest Speaker Dr. Joel Jocelyn, Assistant Superintendent for Curriculum and Instruction</span></li>
+          <li><span>February 24:</span><span>Special guest SMS Student Council</span></li>
+          <li><span>March 17:</span><span>Double date with Work Language Coordinator and Dean of Student Affairs</span></li>
+          <li><span>May 5:</span><span>Members of the Sharon School Committee will join for a focused dialogue about SMS</span></li>
+          <li><span>June 2:</span><span>Welcome 5th Grade Parents to SMS. Please help us create a warm welcome for rising 6th grade families</span></li>
         </ul>
       </div>
     </div>
@@ -58,16 +43,9 @@ import NewsGrid from '../components/NewsGrid.astro';
 
 <style>
   .center { margin-top: 2.25rem; text-align: center; }
-  .calendar-card { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.5rem; padding: 2rem; background: var(--cream); border-left: 10px solid var(--gold); }
-  .calendar-kicker { grid-column: 1 / -1; margin: 0; color: var(--burgundy); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
-  .calendar-date { display: flex; align-items: center; gap: .7rem; color: var(--burgundy); }
-  .calendar-date strong { font-family: 'Calistoga', Georgia, serif; font-size: 4rem; line-height: .8; }
-  .calendar-date span { font-weight: 700; line-height: 1.1; }
-  .calendar-card h3 { margin: 0 0 .35rem; font-family: 'Calistoga', Georgia, serif; font-size: 1.5rem; font-weight: 400; }
-  .calendar-card p { margin: 0; }
   .meeting-title { margin: 0; color: var(--gold); font-family: 'Calistoga', Georgia, serif; font-size: 2.7rem; font-weight: 400; }
   .meeting-list { list-style: none; margin: 2rem 0 0; padding: 0; }
   .meeting-list li { display: grid; grid-template-columns: 135px 1fr; gap: 1rem; padding: .8rem 0; border-bottom: 1px solid rgba(255,255,255,.25); }
   .meeting-list li > span:first-child { color: var(--gold); font-weight: 700; }
-  @media (max-width: 680px) { .calendar-card { grid-template-columns: 1fr; } .calendar-kicker { grid-column: auto; } .meeting-list li { grid-template-columns: 1fr; gap: .2rem; } }
+  @media (max-width: 680px) { .meeting-list li { grid-template-columns: 1fr; gap: .2rem; } }
 </style>

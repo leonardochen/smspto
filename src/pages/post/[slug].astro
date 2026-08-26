@@ -7,25 +7,37 @@ export function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+const slug = Astro.params.slug ?? '';
+const postMeta: Record<string, { readTime: string; tags: string[] }> = {
+  'donate-your-gently-used-items': { readTime: '1 min read', tags: ['Featured'] },
+  'special-discounts-during-teacher-appreciation-week': { readTime: '1 min read', tags: ['General'] },
+  'teacher-appreciation-week-may-4-8': { readTime: '1 min read', tags: ['General'] },
+  'bulletin-april-10': { readTime: '0 min read', tags: ['General', 'PTO Bulletin'] },
+  'meeting-nov-18': { readTime: '1 min read', tags: ['Meetings'] },
+  'a-conversation-with-dr-joel-jocelyn': { readTime: '1 min read', tags: ['General', 'Guest Speakers'] },
+  'october-14-meeting': { readTime: '1 min read', tags: ['General', 'Meetings'] },
+  'pto-bulletin-9-25-25': { readTime: '1 min read', tags: ['General', 'PTO Bulletin'] },
+  'take-the-pto-surveys-help-us-build-an-amazing-year-together': { readTime: '1 min read', tags: ['General'] },
+};
+const meta = postMeta[slug];
 ---
 
 <BaseLayout title={`${post.title} | SMS PTO`} description={post.intro} current="news">
   <article>
     <header class="post-header">
       <div class="narrow">
-        <a class="back-link" href="/news">← All news</a>
+        <a class="back-link" href="/news">All Posts</a>
         <h1>{post.title}</h1>
-        <time>{post.date}</time>
+        <p class="post-meta"><span>smspto</span><time>{post.date}</time><span>{meta.readTime}</span></p>
       </div>
     </header>
     <div class="narrow post-body">
       <img src={post.image} alt={post.title} />
       <p class="lead">{post.intro}</p>
       {post.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-      <div class="share-line">
-        <span>Stay connected</span>
-        <a href="https://www.facebook.com/ptosms">Facebook</a>
-        <a href="https://www.instagram.com/smspto2026/">Instagram</a>
+      <div class="tags">
+        <strong>Tags:</strong>
+        {meta.tags.map((tag) => <span>{tag}</span>)}
       </div>
     </div>
   </article>
@@ -35,9 +47,9 @@ const { post } = Astro.props;
   .post-header { padding: 72px 0; background: var(--burgundy); color: #fff; }
   .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--gold); font-weight: 700; text-decoration: none; }
   .post-header h1 { margin: 0 0 1.2rem; font-family: 'Calistoga', Georgia, serif; font-size: clamp(2.4rem,6vw,4rem); line-height: 1.05; font-weight: 400; }
+  .post-meta { display: flex; gap: 1rem; margin: 0; }
   .post-body { padding-top: 64px; padding-bottom: 80px; }
   .post-body > img { width: 100%; max-height: 650px; margin-bottom: 2.5rem; object-fit: cover; }
   .post-body p { max-width: 680px; }
-  .share-line { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
-  .share-line span { margin-right: auto; font-weight: 700; }
+  .tags { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
 </style>

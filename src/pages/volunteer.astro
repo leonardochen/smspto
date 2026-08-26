@@ -13,37 +13,52 @@ import BazaarPromo from '../components/BazaarPromo.astro';
 
   <section class="section">
     <div class="container split">
-      <div class="quote-block"><h2>Small contributions of time add up to an extraordinary school community.</h2></div>
+      <div></div>
       <div class="volunteer-benefits">
-        <p><strong>Make school events possible.</strong> Family nights, fundraisers, teacher appreciation, and enrichment activities happen because volunteers help out for a few hours.</p>
-        <p><strong>Build community for you and your child.</strong> Connect with other families, teachers, and the school. Kids love seeing their parents participate, even in small ways.</p>
-        <p><strong>Support student learning—on your time.</strong> PTO efforts fund classroom supplies, enrichment programs, field trips, and more.</p>
+        <p><strong>Make school events possible.</strong> Family nights, fundraisers, teacher appreciation, enrichment activities only happen because volunteers help out for a few hours.</p>
+        <p><strong>Build community for you and your child.</strong> Volunteering helps you connect with other families, teachers, and the school. Kids love seeing their parents participate, even in small ways.</p>
+        <p><strong>Support student learning — on your time.</strong> PTO efforts fund classroom supplies, enrichment programs, field trips, and more.</p>
         <div class="quick-links">
           <a href="#fundraising">Join a committee</a>
           <a href="#events">Volunteer or donate for an event</a>
-          <a href="#grants">Help from home</a>
+          <a href="#grants">Help from home with planning or communications</a>
           <a href="#team-rep">Become a team rep</a>
         </div>
       </div>
     </div>
   </section>
 
-  <BazaarPromo />
+  <BazaarPromo showVolunteer={true} />
 
   <section class="section section-cream" id="fundraising">
     <div class="container content split split-wide">
-      <h2>Fundraising Committee</h2>
+      <div><span class="eyebrow">Volunteers needed</span><h2>Fundraising Committee</h2></div>
       <div>
-        <p class="lead">The SMS PTO is seeking volunteers to help form and lead a Fundraising Committee. This high-priority committee will play a critical role in strengthening financial support for SMS programs.</p>
+        <p class="lead">The SMS PTO is seeking volunteers to help form and lead a Fundraising Committee. Our current fundraising levels fall significantly below those of comparable middle schools, limiting our ability to support key programming.</p>
+        <p>This high-priority committee will play a critical role in strengthening financial support for SMS programs to build a sustainable fundraising platform for next academic year.</p>
         <p>Committee members will work collaboratively to:</p>
         <ul>
-          <li>Develop a fundraising strategy for the new academic year.</li>
-          <li>Review benchmark fundraising models and best practices from comparable public middle schools.</li>
-          <li>Identify opportunities for in-kind donations to support annual SMS needs and events.</li>
-          <li>Design and launch an inclusive signature fundraising event that can become an annual tradition.</li>
-          <li>Improve fundraising infrastructure, donation tools, and local business partnerships.</li>
-          <li>Create a grant identification and application timeline.</li>
-          <li>Collaborate with SMS leadership and teachers to align efforts with school priorities.</li>
+          <li>Develop a fundraising strategy for the new academic year</li>
+          <li>Review benchmark fundraising models and best practices from comparable public middle schools</li>
+          <li>Identify and cultivate opportunities for in-kind donations to support annual SMS needs and events</li>
+          <li>Design and launch a signature SMS fundraising event that:
+            <ul>
+              <li>Raises approximately $30,000–$45,000</li>
+              <li>Becomes an annual, sustainable event</li>
+              <li>Does not compete with other fundraising efforts</li>
+              <li>Strengthens parent community connections</li>
+              <li>Is inclusive and offers tiered giving opportunities to ensure broad participation</li>
+            </ul>
+          </li>
+          <li>Review and improve PTO fundraising infrastructure, including:
+            <ul>
+              <li>Enhancing tools to maximize donations</li>
+              <li>Connecting with business that give a percentage of receipts to non-profits</li>
+            </ul>
+          </li>
+          <li>Create a grant identification and application timeline</li>
+          <li>Collaborate with SMS leadership and teachers to align fundraising and grant efforts with school priorities</li>
+          <li>Build and maintain relationships with local businesses, community partners, and alumni interested in supporting SMS</li>
         </ul>
         <a class="button" href="mailto:SMSPTO@sharonschools.net?subject=Join%20the%20SMS%20PTO%20Fundraising%20Committee">Email Us</a>
       </div>
@@ -54,13 +69,13 @@ import BazaarPromo from '../components/BazaarPromo.astro';
     <div class="container content split split-wide">
       <h2>Volunteer or donate for an Event</h2>
       <div>
-        <p class="lead">Our teachers do so much—let’s show them how much they mean to us. Join us in saying thanks during Teacher Appreciation Week.</p>
+        <p class="lead">Our teachers do so much — let’s show them how much they mean to us! During Teacher Appreciation Week, the PTO is hosting daily events to celebrate them. Join us in saying thanks:</p>
         <div class="action-list">
-          <a href="https://account.venmo.com/u/ptosharonmiddleschool">Donate to fund the week’s events <span>→</span></a>
-          <a href="https://forms.gle/NtNdQGnkKvWuXb5RA">Have your child write a thank you <span>→</span></a>
-          <a href="https://www.signupgenius.com/go/10C084DADA92EAAF4CF8-63454102-sms2026#/">Volunteer at an activity <span>→</span></a>
-          <a href="https://www.amazon.com/hz/wishlist/ls/BRTOXAL4F8KX/">Send in classroom supplies <span>→</span></a>
-          <a href="mailto:smspto@sharonschools.net?subject=Teacher%20Appreciation%20Week%3A%20Donate%20a%20raffle%20prize">Donate a raffle prize <span>→</span></a>
+          <a href="https://account.venmo.com/u/ptosharonmiddleschool">Donate to us to fund the week’s events</a>
+          <a href="https://forms.gle/NtNdQGnkKvWuXb5RA">Have your child write a thank you to our amazing teachers</a>
+          <a href="https://www.signupgenius.com/go/10C084DADA92EAAF4CF8-63454102-sms2026#/">Volunteer to help out at one of the activities. Donate or bake a food item.</a>
+          <a href="https://www.amazon.com/hz/wishlist/ls/BRTOXAL4F8KX/">Send in classroom supplies</a>
+          <a href="mailto:smspto@sharonschools.net?subject=Teacher%20Appreciation%20Week%3A%20Donate%20a%20raffle%20prize">Email us to see how you can donate a raffle prize</a>
         </div>
       </div>
     </div>
@@ -70,12 +85,13 @@ import BazaarPromo from '../components/BazaarPromo.astro';
     <div class="container opportunity-grid">
       <article id="grants">
         <h2>Help write a Grant</h2>
-        <p>We’re exploring new ways to support our school community and need someone with experience to guide us. If you have a background in grant writing—or know someone who does—we’d appreciate your help.</p>
+        <p>We’re exploring new ways to support our school community and would love to apply for grants — but we need someone with experience to guide us.</p>
+        <p>If you have a background in grant writing or know someone who does, we’d really appreciate your help. Please comment below or send us a message if you’re interested in volunteering or connecting us with someone who might be a good fit.</p>
         <a class="button" href="mailto:SMSPTO@sharonschools.net?subject=Help%20write%20a%20grant">Email Us</a>
       </article>
       <article id="team-rep">
         <h2>Become a Team Rep</h2>
-        <p>Volunteers serve as a resource for teachers on each team. This could mean organizing a supply drive or reaching out before PTO meetings for updates. We still need a parent rep for World Languages and for Specialists.</p>
+        <p>Volunteers serve as a resource for teachers on each team. This could look like organizing a supply drive throughout the year or reaching to the teachers before PTO meetings for any updates. We still need a parent rep for World Languages and for Specialists.</p>
         <a class="button" href="mailto:SMSPTO@sharonschools.net?subject=Team%20Rep%20Volunteer">Email Us</a>
       </article>
     </div>

@@ -41,11 +41,11 @@ import FundingTable from '../components/FundingTable.astro';
       <div class="home-news-grid">
         <a class="feature-post" href="/post/donate-your-gently-used-items">
           <img src="/images/donate-items.avif" alt="Donate your gently used items" />
-          <div><time>Jun 22</time><h3>DONATE YOUR GENTLY USED ITEMS!</h3><p>Clean out your closets. Support SMS students. Make a difference!</p></div>
+          <div><h3>DONATE YOUR GENTLY USED ITEMS!</h3><p>Clean out your closets. Support SMS students. Make a difference! The SMS PTO is now collecting donations for our September 26 Soaring Eagle Bazaar Fundraiser. Your donated items will help raise funds for Sharon Middle School enrichment programs and the annual 8th Grade Washington, D.C. Trip. We're looking for gently used: 👕 Clothing 👟 Shoes 👜 Accessories 🦅 SMS Spirit Wear 🥾 Outdoor Wear ⚽ Sports Equipment Drop off information: Beginning July 1 11 Livingston Road Please donate only items in good to excellent condition.</p><time>Jun 22</time></div>
         </a>
         <div class="mini-posts">
           <a href="/post/special-discounts-during-teacher-appreciation-week"><img src="/images/teacher-discounts.avif" alt="Teacher discounts" /><div><h3>Special discounts during Teacher Appreciation Week</h3><time>May 5</time></div></a>
-          <a href="/post/teacher-appreciation-week-may-4-8"><img src="/images/teacher-week.avif" alt="Teacher Appreciation Week" /><div><h3>Teacher Appreciation Week: May 4–8</h3><time>Apr 16</time></div></a>
+          <a href="/post/teacher-appreciation-week-may-4-8"><img src="/images/teacher-week.avif" alt="Teacher Appreciation Week" /><div><h3>Teacher Appreciation Week​: May 4–8</h3><time>Apr 16</time></div></a>
           <a href="/post/bulletin-april-10"><img src="/images/bulletin-april-10.avif" alt="Bulletin April 10" /><div><h3>Bulletin: April 10</h3><time>Apr 9</time></div></a>
         </div>
         <div class="calendar-preview">
@@ -88,16 +88,15 @@ import FundingTable from '../components/FundingTable.astro';
         </div>
         <div class="meetings">
           <h3>Meetings</h3>
-          <p>All SMS parents and guardians and teachers are welcome to attend the PTO’s monthly meetings.</p>
-          <p>Meetings are typically held at the Sharon Middle School Library at 7:00 pm unless otherwise noted.</p>
+          <p>All SMS parents and guardians, teachers are welcome to attend the PTO’s monthly meetings. Meetings are typically held at the Sharon Middle School Library at 7:00 pm unless otherwise noted.</p>
           <ul>
             <li><strong>September 9:</strong> <a href="https://c7b909f4-d13c-466d-a683-b19c81a7d16e.filesusr.com/ugd/88c316_ab57899bec8b4f34839596c8196664ae.pdf">Meeting Minutes</a></li>
             <li><strong>October 14:</strong> <a href="https://smspto.wixsite.com/smspto/post/october-14-meeting">Meeting Minutes</a></li>
-            <li><strong>November 18:</strong> Guest Speaker Dr. Joel Jocelyn</li>
+            <li><strong>November 18:</strong> Guest Speaker Dr. Joel Jocelyn, Assistant Superintendent for Curriculum and Instruction</li>
             <li><strong>February 24:</strong> Special guest SMS Student Council</li>
-            <li><strong>March 17:</strong> World Language Coordinator and Dean of Student Affairs</li>
-            <li><strong>May 5:</strong> Members of the Sharon School Committee</li>
-            <li><strong>June 2:</strong> Welcome 5th Grade Parents to SMS</li>
+            <li><strong>March 17:</strong> Double date with Work Language Coordinator and Dean of Student Affairs</li>
+            <li><strong>May 5:</strong> Members of the Sharon School Committee will join for a focused dialogue about SMS</li>
+            <li><strong>June 2:</strong> Welcome 5th Grade Parents to SMS. Please help us create a warm welcome for rising 6th grade families</li>
           </ul>
         </div>
       </div>
@@ -123,6 +122,7 @@ import FundingTable from '../components/FundingTable.astro';
   .feature-post img { width: 100%; height: 165px; object-fit: cover; }
   .feature-post div { padding: 20px 24px; }
   .feature-post h3, .mini-posts h3 { margin: .7rem 0; font-family: 'Calistoga', Georgia, serif; font-size: 1.05rem; line-height: 1.25; }
+  .feature-post p { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 5; }
   .feature-post time, .mini-posts time { font-size: .78rem; }
   .mini-posts { display: grid; grid-template-rows: repeat(3, 1fr); gap: 12px; }
   .mini-posts a { display: grid; grid-template-columns: 114px 1fr; gap: 14px; color: inherit; background: #fff; text-decoration: none; }

@@ -1,61 +1,44 @@
 ---
-interface Props { limit?: number; }
-const { limit = 6 } = Astro.props;
-const posts = [
-  {
-    title: 'DONATE YOUR GENTLY USED ITEMS!',
-    date: 'Jun 22',
-    image: '/images/donate-items.avif',
-    href: '/post/donate-your-gently-used-items',
-    excerpt: 'Clean out your closets. Support SMS students. Make a difference! Donations will help raise funds for enrichment programs and the annual 8th Grade Washington, D.C. Trip.',
-  },
-  {
-    title: 'Special discounts during Teacher Appreciation Week',
-    date: 'May 5',
-    image: '/images/teacher-discounts.avif',
-    href: '/post/special-discounts-during-teacher-appreciation-week',
-    excerpt: 'Retailers, restaurants, and brands are offering deals that teachers can enjoy this week—and some all year-round.',
-  },
-  {
-    title: 'Teacher Appreciation Week: May 4–8',
-    date: 'Apr 16',
-    image: '/images/teacher-week.avif',
-    href: '/post/teacher-appreciation-week-may-4-8',
-    excerpt: 'Help us celebrate the dedicated teachers and staff who make Sharon Middle School such a special community.',
-  },
-  {
-    title: 'Bulletin: April 10',
-    date: 'Apr 9',
-    image: '/images/bulletin-april-10.avif',
-    href: '/post/bulletin-april-10',
-    excerpt: 'The latest PTO bulletin with school news, upcoming dates, volunteer opportunities, and community updates.',
-  },
-  {
-    title: 'PTO Updates & Reminders',
-    date: 'Mar 27',
-    image: '/images/pto-reminders.avif',
-    href: '/news',
-    excerpt: 'Stay connected with current PTO projects, family opportunities, and ways to support SMS.',
-  },
-  {
-    title: 'Community Update',
-    date: 'Mar 13',
-    image: '/images/community-update.avif',
-    href: '/news',
-    excerpt: 'Highlights and timely information for Sharon Middle School families and staff.',
-  },
-];
+interface Props { limit?: number; compact?: boolean; }
+import { posts as postData } from '../data/posts';
+const { limit = 9, compact = false } = Astro.props;
+const excerpts: Record<string, string> = {
+  'donate-your-gently-used-items': "Clean out your closets. Support SMS students. Make a difference! The SMS PTO is now collecting donations for our September 26 Soaring Eagle Bazaar Fundraiser. Your donated items will help raise funds for Sharon Middle School enrichment programs and the annual 8th Grade Washington, D.C. Trip. We're looking for gently used: 👕 Clothing 👟 Shoes 👜 Accessories 🦅 SMS Spirit Wear 🥾 Outdoor Wear ⚽ Sports Equipment Drop off information: Beginning July 1 11 Livingston Road Please donate only items in good to excellent condition.",
+  'special-discounts-during-teacher-appreciation-week': 'Retailers, restaurants, and brands are offering great deals that teachers can enjoy this week (and some are all year-round). All you need is a school ID or through ID.me to verify you are a teacher. Here\'s an example of deals: Local Burn Boot Camp Sharon: FREE WEEK of workouts for Teachers for Teacher Appreciation Week May 4th-9th Duck Donuts Walpole: $5 off any dozen, 50% reward cards for gifting, free delivery on $100+ orders.',
+  'teacher-appreciation-week-may-4-8': 'Our teachers do so much — let’s show them how much they mean to us! During Teacher Appreciation Week, the PTO is hosting daily events to celebrate them. Families can help by donating, volunteering, or encouraging students to share a message of appreciation. This is how you can participate: Donate to us to fund the week’s events Have your child write a thank you to our amazing teachers Volunteer to help out at one of the activities Donate or bake a food item Donate a raffle prize Send in classroom supplies',
+  'bulletin-april-10': 'From upcoming events and Teacher Appreciation Week to ways you can get involved—there’s a lot happening at SMS! Take a few minutes to check it out.',
+  'meeting-nov-18': "Agenda Welcome and Introductions Guest Speaker: Joel Jocelyn, Assistant Superintendent Curriculum, Instruction and Administration Principal's Update: Kevin O’Rourke Treasurer’s Update Fundraising Spent so far Upcoming Events Team Reps Spirit Wear - update Teacher Lunch tomorrow November 19 2025 Capital for the Capitol Paint Party Fundraiser - December 6 Book Sale - December 12 PTO Social - December 18 Sweet Treats - December 18 Ice Skating Social Event - Save the Date! - January 15",
+  'a-conversation-with-dr-joel-jocelyn': "The PTO hosted a special meeting with Dr. Joel Jocelyn, Assistant Superintendent for Curriculum and Instruction. Dr. Jocelyn lead an engaging conversation that focuses on Middle School Curriculum and Instruction. He shared about middle school developmental phases, curriculum, and ways families can partner with the school in supporting student success. You can watch Dr. Jocelyn's presentation and read his presentation slides by clicking on the links below.",
+  'october-14-meeting': 'We covered a lot in our last PTO meeting — here’s a quick recap: 7th & 8th Grade Trips What “Enrichments” (aka Assemblies) are all about SEPAC Guest Speaker Summary of PTO Support So Far Teacher Stipend Update Middle School Needs & PTO “Buckets” Breakdown Upcoming Activities Survey Results New Ideas for Engagement & Fundraising Watch the full recording of the meeting',
+  'pto-bulletin-9-25-25': 'Check out the latest news from the PTO!',
+  'take-the-pto-surveys-help-us-build-an-amazing-year-together': 'Hello SMS families! We’re gearing up for an exciting school year, and we want YOU to be a part of making it unforgettable! The PTO (Parent Teacher Organization) is already hard at work planning fun events, community activities, and meaningful ways to support our students and staff — but we can’t do it without your voice and your help.',
+};
+const posts = Object.entries(postData).map(([slug, post]) => ({
+  ...post,
+  href: `/post/${slug}`,
+  excerpt: excerpts[slug] ?? post.intro,
+}));
 ---
 
-<div class="news-grid">
-  {posts.slice(0, limit).map((post) => (
+<div class:list={['news-grid', { compact }]}>
+  {posts.slice(0, limit).map((post, index) => (
     <a class="news-card" href={post.href}>
       <img src={post.image} alt={post.title} loading="lazy" />
       <div class="news-card-body">
         <h3>{post.title}</h3>
-        <p>{post.excerpt}</p>
+        {(!compact || index === 0) && <p>{post.excerpt}</p>}
         <time>{post.date}</time>
       </div>
     </a>
   ))}
 </div>
+
+<style>
+  .news-card p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+  .news-grid.compact .news-card:first-child p { -webkit-line-clamp: 8; }
+</style>
