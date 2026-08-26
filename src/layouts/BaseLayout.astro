@@ -1,0 +1,92 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  current?: string;
+}
+
+const { title, description, current = '' } = Astro.props;
+const nav = [
+  { href: '/', label: 'About Us', key: 'home' },
+  { href: '/support-us', label: 'Support Us', key: 'support' },
+  { href: '/volunteer', label: 'Volunteer', key: 'volunteer' },
+  { href: '/events', label: 'Meetings & Events', key: 'events' },
+  { href: '/news', label: 'News', key: 'news' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={new URL('/images/sms-school.avif', Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="icon" type="image/avif" href="/images/logo.avif" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to Main Content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/" aria-label="Sharon Middle School PTO home">
+          <img src="/images/logo.avif" alt="SMS PTO" width="73" height="69" />
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          {nav.map((item) => (
+            <a class:list={[{ active: current === item.key }]} href={item.href} aria-current={current === item.key ? 'page' : undefined}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <a class="button button-small donate-button" href="https://www.paypal.com/donate/?hosted_button_id=4PA5VY9P3BL34" target="_blank" rel="noreferrer">Donate now</a>
+        <details class="mobile-nav">
+          <summary aria-label="Open navigation"><span></span><span></span><span></span></summary>
+          <nav aria-label="Mobile navigation">
+            {nav.map((item) => <a class:list={[{ active: current === item.key }]} href={item.href}>{item.label}</a>)}
+            <a href="https://www.paypal.com/donate/?hosted_button_id=4PA5VY9P3BL34" target="_blank" rel="noreferrer">Donate now</a>
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <section>
+          <h2>Sharon Middle School PTO</h2>
+          <p>75 Mountain Street<br />Sharon, MA 02067</p>
+          <a href="mailto:smspto@sharonschools.net?subject=Question%20from%20the%20SMS%20PTO%20website">smspto@sharonschools.net</a>
+        </section>
+        <section>
+          <h2>Additional Links</h2>
+          <a href="https://sharon.powerschool.com/public/" target="_blank" rel="noreferrer">PowerSchool Portal</a>
+          <a href="https://ms.sharonschools.net/en-US" target="_blank" rel="noreferrer">SMS Official Website</a>
+          <a href="https://drive.google.com/file/d/1bO_slkvNcLussbZuy4UcYtBmVcZH599Y/view" target="_blank" rel="noreferrer">SMS Calendar</a>
+          <a href="https://www.sharoneducationfoundation.org/" target="_blank" rel="noreferrer">S.E.F.</a>
+          <a href="https://www.famesharon.org/" target="_blank" rel="noreferrer">F.A.M.E.</a>
+        </section>
+        <section>
+          <h2>Follow Us</h2>
+          <div class="social-links">
+            <a href="https://www.facebook.com/ptosms" target="_blank" rel="noreferrer" aria-label="Facebook"><img src="/images/facebook.avif" alt="" /></a>
+            <a href="https://www.instagram.com/smspto2026/" target="_blank" rel="noreferrer" aria-label="Instagram"><img src="/images/instagram.avif" alt="" /></a>
+          </div>
+        </section>
+      </div>
+      <p class="legal">The Sharon Middle School Parent Teacher Organization Inc is a 501(c)(3) charitable organization (EIN 20-8448543) which supports <a href="https://ms.sharonschools.net/">Sharon Middle School.</a></p>
+    </footer>
+  </body>
+</html>

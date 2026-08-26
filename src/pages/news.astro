@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BazaarPromo from '../components/BazaarPromo.astro';
+import NewsGrid from '../components/NewsGrid.astro';
+---
+
+<BaseLayout title="News | SMS PTO" description="The latest PTO news, school events, volunteer opportunities, meeting recaps, and community highlights from Sharon Middle School." current="news">
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="display-title">News & Updates</h1>
+      <p>Catch up on the latest PTO news, school events, volunteer opportunities, meeting recaps, and community highlights from Sharon Middle School.</p>
+    </div>
+  </section>
+
+  <BazaarPromo />
+
+  <section class="section section-cream">
+    <div class="container">
+      <NewsGrid />
+    </div>
+  </section>
+</BaseLayout>

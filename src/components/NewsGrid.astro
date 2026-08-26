@@ -1,0 +1,61 @@
+---
+interface Props { limit?: number; }
+const { limit = 6 } = Astro.props;
+const posts = [
+  {
+    title: 'DONATE YOUR GENTLY USED ITEMS!',
+    date: 'Jun 22',
+    image: '/images/donate-items.avif',
+    href: '/post/donate-your-gently-used-items',
+    excerpt: 'Clean out your closets. Support SMS students. Make a difference! Donations will help raise funds for enrichment programs and the annual 8th Grade Washington, D.C. Trip.',
+  },
+  {
+    title: 'Special discounts during Teacher Appreciation Week',
+    date: 'May 5',
+    image: '/images/teacher-discounts.avif',
+    href: '/post/special-discounts-during-teacher-appreciation-week',
+    excerpt: 'Retailers, restaurants, and brands are offering deals that teachers can enjoy this week—and some all year-round.',
+  },
+  {
+    title: 'Teacher Appreciation Week: May 4–8',
+    date: 'Apr 16',
+    image: '/images/teacher-week.avif',
+    href: '/post/teacher-appreciation-week-may-4-8',
+    excerpt: 'Help us celebrate the dedicated teachers and staff who make Sharon Middle School such a special community.',
+  },
+  {
+    title: 'Bulletin: April 10',
+    date: 'Apr 9',
+    image: '/images/bulletin-april-10.avif',
+    href: '/post/bulletin-april-10',
+    excerpt: 'The latest PTO bulletin with school news, upcoming dates, volunteer opportunities, and community updates.',
+  },
+  {
+    title: 'PTO Updates & Reminders',
+    date: 'Mar 27',
+    image: '/images/pto-reminders.avif',
+    href: '/news',
+    excerpt: 'Stay connected with current PTO projects, family opportunities, and ways to support SMS.',
+  },
+  {
+    title: 'Community Update',
+    date: 'Mar 13',
+    image: '/images/community-update.avif',
+    href: '/news',
+    excerpt: 'Highlights and timely information for Sharon Middle School families and staff.',
+  },
+];
+---
+
+<div class="news-grid">
+  {posts.slice(0, limit).map((post) => (
+    <a class="news-card" href={post.href}>
+      <img src={post.image} alt={post.title} loading="lazy" />
+      <div class="news-card-body">
+        <h3>{post.title}</h3>
+        <p>{post.excerpt}</p>
+        <time>{post.date}</time>
+      </div>
+    </a>
+  ))}
+</div>

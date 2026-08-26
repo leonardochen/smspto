@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FundingTable from '../components/FundingTable.astro';
+---
+
+<BaseLayout title="Support Us | SMS PTO" description="Help the Sharon Middle School PTO fund teacher resources, enrichment programs, student opportunities, and community-building events." current="support">
+  <section class="support-hero">
+    <div class="container support-hero-grid">
+      <img src="/images/enrichment-science.avif" alt="SMS science enrichment program" />
+      <div class="support-copy">
+        <h1 class="display-title">Invest in the SMS Experience</h1>
+        <p class="lead">We help fund teacher resources, enrichment programs, student opportunities, and community-building events that enhance the middle school experience.</p>
+        <p>We are aiming to raise $45,000 for the upcoming school year. Every donation helps make a difference. The SMS PTO is a registered 501(c)(3) nonprofit organization.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="support-enrichment">
+    <div class="container enrichment-grid">
+      <h2 class="section-title">Help Fund Next Year's Enrichment Programs</h2>
+      <div>
+        <div class="button-row">
+          <a class="button" href="#matching">Get a Corporate Matching Gift</a>
+          <a class="button" href="#membership">Get a PTO Membership</a>
+        </div>
+        <p class="lead">Programs such as <a href="https://www.theatreespresso.org">Theater Espresso</a> and <a href="https://www.crocodilerivermusic.org/our-programs">Crocodile River Music</a> provide engaging experiences that expose students to new ideas, perspectives, and cultures beyond the traditional classroom.</p>
+        <p>The cost to bring these enrichment opportunities to all grades is approximately $10,000–$15,000, with individual programs ranging from $3,000–$5,000 or more.</p>
+        <p>With your support, we can continue offering these valuable experiences and ensure that every student benefits throughout the school year.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="donations-section">
+    <div class="container">
+      <h2 class="section-title">Where Your Donations Go</h2>
+      <div class="split split-wide">
+        <div><FundingTable /><p><small>* Our goal is to fund two enrichment experiences per grade level each year.</small></p></div>
+        <div class="program-list">
+          <p><strong>Enrichment Programs:</strong> Assemblies, workshops, and special presentations bring new voices, ideas, and experiences into the classroom.</p>
+          <p><strong>Teacher Stipends:</strong> Classroom resources not covered by the school budget, including subscriptions, teaching materials, and technology.</p>
+          <p><strong>Gratitude &amp; Appreciation:</strong> Appreciation lunches, Teacher Appreciation Week activities, and other expressions of gratitude.</p>
+          <p><strong>Wish List Fund:</strong> Emerging opportunities and priorities identified by students, staff, and the community.</p>
+          <p><strong>Community Activities:</strong> Family events and parent gatherings that strengthen connections.</p>
+          <p><strong>Family Assistance Fund:</strong> Help for families who need assistance accessing PTO-supported activities.</p>
+          <p><strong>Save the Day Fund:</strong> Fast support when unexpected and urgent needs arise.</p>
+          <p><strong>Administration:</strong> Website hosting, event signage, and hospitality supplies that help volunteers maximize their impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="matching-section" id="matching">
+    <div class="narrow content">
+      <h2>Double Your Impact Through Corporate Matching</h2>
+      <p class="lead">Many employers offer matching gift programs that can double—or even triple—the value of your donation. A $25 donation can become $50. A $50 donation can become $100 or more.</p>
+      <p>It's one of the easiest ways to increase your impact and help us reach our fundraising goals.</p>
+      <ol>
+        <li>Make a donation to the SMS PTO.</li>
+        <li>Contact your company’s HR department or <a href="https://doublethedonation.com/matching-gift-search#dd-container">search for your company here</a>.</li>
+        <li>Complete your company’s matching gift form with the organization information below.</li>
+      </ol>
+      <div class="match-card">
+        <strong>SHARON MIDDLE SCHOOL PARENT TEACHER ORGANIZATION INC</strong><br />
+        75 Mountain St., Sharon MA 02067<br />
+        Contact: David Straus, Treasurer<br />
+        EIN: 20-8448543<br />
+        <a href="mailto:smspto@sharonschools.net">smspto@sharonschools.net</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="membership-section" id="membership">
+    <div class="container split">
+      <div>
+        <h2 class="membership-title">Become a PTO member</h2>
+        <p class="lead">We recognize that every family's situation is different and are grateful for contributions at any level. Every gift helps strengthen our school community.</p>
+        <a class="button" href="https://www.zeffy.com/en-US/ticketing/sms-pto-membership" target="_blank" rel="noreferrer">Get a PTO Membership</a>
+        <p class="membership-note">Joining PTO does not mean you are donating your time or that you need to attend meetings.</p>
+      </div>
+      <div>
+        <h3>Support by Grade Level</h3>
+        <div class="stats">
+          <div class="stat"><strong>50</strong>6th Grade Families</div>
+          <div class="stat"><strong>48</strong>7th Grade Families</div>
+          <div class="stat"><strong>47</strong>8th Grade Families</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="levels-section">
+    <div class="container">
+      <h2 class="section-title">Membership levels</h2>
+      <p class="lead level-intro">Many comparable middle school PTOs ask families to contribute approximately $75 annually. With corporate matching, a $75 donation can become $150 or more.</p>
+      <table class="funding-table levels">
+        <thead><tr><th>Level</th><th>Impact</th></tr></thead>
+        <tbody>
+          <tr><td>$25 Eagle Friend</td><td>Help fund in-school enrichment for 1 student</td></tr>
+          <tr><td>$50 Eagle Supporter</td><td>Listed above + appreciation lunch for 2 teachers</td></tr>
+          <tr><td>$75 Soaring Eagle</td><td>Listed above + support community activities</td></tr>
+          <tr><td>$100 Golden Eagle</td><td>Funds 1 teacher stipend for classroom supplies</td></tr>
+          <tr><td>$200 Eagle Champion</td><td>Supports a community building event</td></tr>
+          <tr><td>$500+ Eagle Legacy</td><td>Help fund in-school enrichment for students</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .support-hero { height: 336px; background: var(--burgundy); }
+  .support-hero-grid { width: 100%; max-width: none; height: 336px; display: grid; grid-template-columns: 427px 1fr; }
+  .support-copy { padding: 40px 110px 24px 130px; color: #fff; background: var(--burgundy); }
+  .support-copy .display-title { width: 598px; color: var(--gold); }
+  .support-copy .lead { margin: 1.25rem 0 0; }
+  .support-copy p { width: 598px; }
+  .support-hero img { order: -1; width: 427px; height: 336px; object-fit: cover; }
+  .support-enrichment { height: 374px; padding: 40px 0; background: #e8e6e6; }
+  .enrichment-grid { display: grid; grid-template-columns: 347px 1fr; gap: 40px; }
+  .support-enrichment .button-row { margin: 0 0 28px; }
+  .support-enrichment .button { min-width: 244px; color: #fff; background: #6b0801; border-color: #6b0801; }
+  .support-enrichment .lead { font-size: 1rem; }
+  .support-enrichment p { margin-bottom: .7rem; }
+  .donations-section { height: 957px; padding: 42px 0; background: #fff; }
+  .program-list p { padding-bottom: .8rem; border-bottom: 1px solid var(--line); }
+  ol { padding-left: 1.3rem; }
+  ol li { margin: .8rem 0; }
+  .match-card { margin-top: 2rem; padding: 1.5rem; background: var(--cream); border-left: 8px solid var(--gold); }
+  .matching-section { height: 661px; padding: 42px 0; background: #e8e6e6; }
+  .membership-section { height: 340px; padding: 42px 0; color: #000; background: #fff; }
+  .membership-title { margin: 0 0 1.2rem; color: var(--burgundy); font-family: 'Calistoga', Georgia, serif; font-size: clamp(2.3rem,5vw,3.2rem); font-weight: 400; line-height: 1.1; }
+  .membership-note { margin-top: 1rem; font-size: .86rem; }
+  .membership-section h3 { margin: 0 0 1rem; font-family: 'Lulo Clean', sans-serif; font-size: 1.15rem; text-transform: uppercase; }
+  .levels-section { height: 462px; padding: 34px 0; background: #fff; }
+  .level-intro { max-width: 760px; }
+  .levels td:first-child { font-weight: 700; }
+  .levels tbody tr:last-child { background: transparent; }
+  @media (max-width: 820px) {
+    .support-hero, .support-hero-grid, .support-enrichment, .donations-section, .matching-section, .membership-section, .levels-section { height: auto; }
+    .support-hero-grid, .enrichment-grid { grid-template-columns: 1fr; }
+    .support-copy { padding: 36px; }
+    .support-copy .display-title, .support-copy p { width: auto; }
+    .support-hero img { width: 100%; }
+    .support-hero img { height: 360px; }
+    .support-enrichment, .donations-section, .matching-section, .membership-section, .levels-section { padding: 54px 0; }
+  }
+  @media (max-width: 560px) { .support-copy { padding: 28px 22px; } }
+</style>

@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BazaarPromo from '../components/BazaarPromo.astro';
+---
+
+<BaseLayout title="Volunteer | SMS PTO" description="Volunteer with the Sharon Middle School PTO and help make school events, enrichment, and community programs possible." current="volunteer">
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="display-title">Why Volunteer?</h1>
+      <p>Our PTO is strongest when many families contribute a little bit of time.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="quote-block"><h2>Small contributions of time add up to an extraordinary school community.</h2></div>
+      <div class="volunteer-benefits">
+        <p><strong>Make school events possible.</strong> Family nights, fundraisers, teacher appreciation, and enrichment activities happen because volunteers help out for a few hours.</p>
+        <p><strong>Build community for you and your child.</strong> Connect with other families, teachers, and the school. Kids love seeing their parents participate, even in small ways.</p>
+        <p><strong>Support student learning—on your time.</strong> PTO efforts fund classroom supplies, enrichment programs, field trips, and more.</p>
+        <div class="quick-links">
+          <a href="#fundraising">Join a committee</a>
+          <a href="#events">Volunteer or donate for an event</a>
+          <a href="#grants">Help from home</a>
+          <a href="#team-rep">Become a team rep</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <BazaarPromo />
+
+  <section class="section section-cream" id="fundraising">
+    <div class="container content split split-wide">
+      <h2>Fundraising Committee</h2>
+      <div>
+        <p class="lead">The SMS PTO is seeking volunteers to help form and lead a Fundraising Committee. This high-priority committee will play a critical role in strengthening financial support for SMS programs.</p>
+        <p>Committee members will work collaboratively to:</p>
+        <ul>
+          <li>Develop a fundraising strategy for the new academic year.</li>
+          <li>Review benchmark fundraising models and best practices from comparable public middle schools.</li>
+          <li>Identify opportunities for in-kind donations to support annual SMS needs and events.</li>
+          <li>Design and launch an inclusive signature fundraising event that can become an annual tradition.</li>
+          <li>Improve fundraising infrastructure, donation tools, and local business partnerships.</li>
+          <li>Create a grant identification and application timeline.</li>
+          <li>Collaborate with SMS leadership and teachers to align efforts with school priorities.</li>
+        </ul>
+        <a class="button" href="mailto:SMSPTO@sharonschools.net?subject=Join%20the%20SMS%20PTO%20Fundraising%20Committee">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="events">
+    <div class="container content split split-wide">
+      <h2>Volunteer or donate for an Event</h2>
+      <div>
+        <p class="lead">Our teachers do so much—let’s show them how much they mean to us. Join us in saying thanks during Teacher Appreciation Week.</p>
+        <div class="action-list">
+          <a href="https://account.venmo.com/u/ptosharonmiddleschool">Donate to fund the week’s events <span>→</span></a>
+          <a href="https://forms.gle/NtNdQGnkKvWuXb5RA">Have your child write a thank you <span>→</span></a>
+          <a href="https://www.signupgenius.com/go/10C084DADA92EAAF4CF8-63454102-sms2026#/">Volunteer at an activity <span>→</span></a>
+          <a href="https://www.amazon.com/hz/wishlist/ls/BRTOXAL4F8KX/">Send in classroom supplies <span>→</span></a>
+          <a href="mailto:smspto@sharonschools.net?subject=Teacher%20Appreciation%20Week%3A%20Donate%20a%20raffle%20prize">Donate a raffle prize <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-burgundy">
+    <div class="container opportunity-grid">
+      <article id="grants">
+        <h2>Help write a Grant</h2>
+        <p>We’re exploring new ways to support our school community and need someone with experience to guide us. If you have a background in grant writing—or know someone who does—we’d appreciate your help.</p>
+        <a class="button" href="mailto:SMSPTO@sharonschools.net?subject=Help%20write%20a%20grant">Email Us</a>
+      </article>
+      <article id="team-rep">
+        <h2>Become a Team Rep</h2>
+        <p>Volunteers serve as a resource for teachers on each team. This could mean organizing a supply drive or reaching out before PTO meetings for updates. We still need a parent rep for World Languages and for Specialists.</p>
+        <a class="button" href="mailto:SMSPTO@sharonschools.net?subject=Team%20Rep%20Volunteer">Email Us</a>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .volunteer-benefits p { padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+  .quick-links { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin-top: 1.5rem; }
+  .quick-links a { padding: .9rem; color: var(--burgundy); background: var(--cream); font-weight: 700; text-decoration: none; }
+  .action-list { border-top: 1px solid var(--line); }
+  .action-list a { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); color: var(--burgundy); font-weight: 700; text-decoration: none; }
+  .action-list a:hover { color: #000; }
+  .opportunity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+  .opportunity-grid h2 { margin: 0 0 1rem; color: var(--gold); font-family: 'Calistoga', Georgia, serif; font-size: 2.2rem; font-weight: 400; }
+  @media (max-width: 720px) { .quick-links, .opportunity-grid { grid-template-columns: 1fr; } .opportunity-grid { gap: 3.5rem; } }
+</style>
