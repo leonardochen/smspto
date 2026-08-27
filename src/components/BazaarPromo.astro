@@ -1,9 +1,9 @@
 ---
-interface Props { showVolunteer?: boolean; showTime?: boolean; }
-const { showVolunteer = false, showTime = true } = Astro.props;
+interface Props { showVolunteer?: boolean; showTime?: boolean; dark?: boolean; }
+const { showVolunteer = false, showTime = true, dark = false } = Astro.props;
 ---
 
-<section class="bazaar-promo">
+<section class:list={['bazaar-promo', { 'bazaar-promo-dark': dark, 'bazaar-promo-volunteer': showVolunteer, 'bazaar-promo-no-time': !showTime }]}>
   <div class="container bazaar-grid">
     <div>
       <span class="eyebrow">Fundraiser Save the Date</span>

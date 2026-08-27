@@ -12,20 +12,22 @@ import NewsGrid from '../components/NewsGrid.astro';
     </div>
   </section>
 
-  <BazaarPromo />
+  <BazaarPromo dark={true} />
 
-  <section class="section section-cream">
+  <section class="events-news">
     <div class="container">
       <NewsGrid limit={4} compact={true} />
       <div class="center"><a class="button button-outline" href="/news">View all news</a></div>
     </div>
   </section>
 
-  <section class="section section-burgundy">
-    <div class="container split split-wide">
-      <h2 class="meeting-title">PTO Meetings</h2>
+  <section class="meetings-section">
+    <div class="container meetings-grid">
       <div>
-        <p class="lead">Parents, guardians, and staff are welcome! Join us to stay informed, share ideas, and get involved in the programs that make SMS such a great place to learn and grow.</p>
+        <h2 class="meeting-title">PTO Meetings</h2>
+        <p class="meeting-lead">Parents, guardians, and staff are welcome! Join us to stay informed, share ideas, and get involved in the programs that make SMS such a great place to learn and grow.</p>
+      </div>
+      <div>
         <p>Meetings are typically held at the Sharon Middle School Library at 7:00 pm unless otherwise noted.</p>
         <ul class="meeting-list">
           <li><span>September 9:</span><a href="https://c7b909f4-d13c-466d-a683-b19c81a7d16e.filesusr.com/ugd/88c316_ab57899bec8b4f34839596c8196664ae.pdf">Meeting Minutes</a></li>
@@ -42,10 +44,18 @@ import NewsGrid from '../components/NewsGrid.astro';
 </BaseLayout>
 
 <style>
+  .events-news { height: 503px; padding: 40px 0 30px; background: var(--cream); }
   .center { margin-top: 2.25rem; text-align: center; }
-  .meeting-title { margin: 0; color: var(--gold); font-family: 'Calistoga', Georgia, serif; font-size: 2.7rem; font-weight: 400; }
-  .meeting-list { list-style: none; margin: 2rem 0 0; padding: 0; }
-  .meeting-list li { display: grid; grid-template-columns: 135px 1fr; gap: 1rem; padding: .8rem 0; border-bottom: 1px solid rgba(255,255,255,.25); }
-  .meeting-list li > span:first-child { color: var(--gold); font-weight: 700; }
-  @media (max-width: 680px) { .meeting-list li { grid-template-columns: 1fr; gap: .2rem; } }
+  .meetings-section { height: 377px; padding: 39px 0 28px; color: #000; background: #fff; }
+  .meetings-grid { display: grid; grid-template-columns: 342px 1fr; gap: 38px; }
+  .meeting-title { margin: 0 0 18px; color: var(--burgundy); font-family: 'Calistoga', Georgia, serif; font-size: 36px; line-height: 1.1; font-weight: 400; }
+  .meeting-lead { max-width: 330px; font-weight: 700; }
+  .meeting-list { margin: 1.35rem 0 0; padding-left: 1.2rem; }
+  .meeting-list li { margin: 2px 0; }
+  .meeting-list li > * { display: inline; }
+  .meeting-list li > span:first-child { margin-right: .3rem; }
+  @media (max-width: 820px) {
+    .events-news, .meetings-section { height: auto; padding: 54px 0; }
+    .meetings-grid { grid-template-columns: 1fr; }
+  }
 </style>

@@ -18,18 +18,26 @@ const posts = Object.entries(postData).map(([slug, post]) => ({
   href: `/post/${slug}`,
   excerpt: excerpts[slug] ?? post.intro,
 }));
+const items = posts.slice(0, limit).map((post, index) => ({ ...post, index }));
+const columns = compact
+  ? [items]
+  : [0, 1, 2].map((column) => items.filter((item) => item.index % 3 === column));
 ---
 
 <div class:list={['news-grid', { compact }]}>
-  {posts.slice(0, limit).map((post, index) => (
-    <a class="news-card" href={post.href}>
-      <img src={post.image} alt={post.title} loading="lazy" />
-      <div class="news-card-body">
-        <h3>{post.title}</h3>
-        {(!compact || index === 0) && <p>{post.excerpt}</p>}
-        <time>{post.date}</time>
-      </div>
-    </a>
+  {columns.map((column) => (
+    <div class="news-column">
+      {column.map((post) => (
+        <a class="news-card" href={post.href}>
+          <img src={post.image} alt={post.title} loading="lazy" />
+          <div class="news-card-body">
+            <h3>{post.title}</h3>
+            {(!compact || post.index === 0) && <p>{post.excerpt}</p>}
+            <time>{post.date}</time>
+          </div>
+        </a>
+      ))}
+    </div>
   ))}
 </div>
 

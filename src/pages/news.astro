@@ -12,11 +12,27 @@ import NewsGrid from '../components/NewsGrid.astro';
     </div>
   </section>
 
-  <BazaarPromo showTime={false} />
+  <BazaarPromo showTime={false} dark={true} />
 
-  <section class="section section-cream">
+  <section class="news-list-section">
     <div class="container">
       <NewsGrid />
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .news-list-section { height: 2074px; padding: 74px 0 70px; overflow: hidden; background: var(--cream); }
+  @media (min-width: 821px) {
+    .news-list-section :global(.news-column:nth-child(1) .news-card:nth-child(1)) { min-height: 499px; }
+    .news-list-section :global(.news-column:nth-child(1) .news-card:nth-child(2)) { min-height: 724px; }
+    .news-list-section :global(.news-column:nth-child(1) .news-card:nth-child(3)) { min-height: 665px; }
+    .news-list-section :global(.news-column:nth-child(2) .news-card:nth-child(1)) { min-height: 546px; }
+    .news-list-section :global(.news-column:nth-child(2) .news-card:nth-child(2)) { min-height: 643px; }
+    .news-list-section :global(.news-column:nth-child(2) .news-card:nth-child(3)) { min-height: 699px; }
+    .news-list-section :global(.news-column:nth-child(3) .news-card:nth-child(1)) { min-height: 503px; }
+    .news-list-section :global(.news-column:nth-child(3) .news-card:nth-child(2)) { min-height: 545px; }
+    .news-list-section :global(.news-column:nth-child(3) .news-card:nth-child(3)) { min-height: 840px; }
+  }
+  @media (max-width: 820px) { .news-list-section { height: auto; overflow: visible; } }
+</style>

@@ -4,35 +4,33 @@ import BazaarPromo from '../components/BazaarPromo.astro';
 ---
 
 <BaseLayout title="Volunteer | SMS PTO" description="Volunteer with the Sharon Middle School PTO and help make school events, enrichment, and community programs possible." current="volunteer">
-  <section class="page-hero">
-    <div class="container">
+  <section class="volunteer-intro">
+    <div class="container volunteer-intro-inner">
       <h1 class="display-title">Why Volunteer?</h1>
-      <p>Our PTO is strongest when many families contribute a little bit of time.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container split">
-      <div></div>
-      <div class="volunteer-benefits">
+      <h2>Our PTO is strongest when many families contribute a little bit of time.</h2>
+      <div class="volunteer-intro-grid">
+        <div class="volunteer-benefits">
         <p><strong>Make school events possible.</strong> Family nights, fundraisers, teacher appreciation, enrichment activities only happen because volunteers help out for a few hours.</p>
         <p><strong>Build community for you and your child.</strong> Volunteering helps you connect with other families, teachers, and the school. Kids love seeing their parents participate, even in small ways.</p>
         <p><strong>Support student learning — on your time.</strong> PTO efforts fund classroom supplies, enrichment programs, field trips, and more.</p>
+        </div>
         <div class="quick-links">
-          <a href="#fundraising">Join a committee</a>
-          <a href="#events">Volunteer or donate for an event</a>
-          <a href="#grants">Help from home with planning or communications</a>
-          <a href="#team-rep">Become a team rep</a>
+          <ul>
+            <li><a href="#fundraising">Join a committee</a></li>
+            <li><a href="#events">Volunteer or donate for an event</a></li>
+            <li><a href="#grants">Help from home with planning or communications</a></li>
+            <li><a href="#team-rep">Become a team rep</a></li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <BazaarPromo showVolunteer={true} />
+  <BazaarPromo showVolunteer={true} dark={true} />
 
-  <section class="section section-cream" id="fundraising">
+  <section class="volunteer-row volunteer-fundraising" id="fundraising">
     <div class="container content split split-wide">
-      <div><span class="eyebrow">Volunteers needed</span><h2>Fundraising Committee</h2></div>
+      <div><h2>Fundraising Committee</h2></div>
       <div>
         <p class="lead">The SMS PTO is seeking volunteers to help form and lead a Fundraising Committee. Our current fundraising levels fall significantly below those of comparable middle schools, limiting our ability to support key programming.</p>
         <p>This high-priority committee will play a critical role in strengthening financial support for SMS programs to build a sustainable fundraising platform for next academic year.</p>
@@ -65,7 +63,7 @@ import BazaarPromo from '../components/BazaarPromo.astro';
     </div>
   </section>
 
-  <section class="section" id="events">
+  <section class="volunteer-row" id="events">
     <div class="container content split split-wide">
       <h2>Volunteer or donate for an Event</h2>
       <div>
@@ -81,31 +79,52 @@ import BazaarPromo from '../components/BazaarPromo.astro';
     </div>
   </section>
 
-  <section class="section section-burgundy">
-    <div class="container opportunity-grid">
+  <section class="volunteer-opportunities">
+    <div class="container">
       <article id="grants">
         <h2>Help write a Grant</h2>
-        <p>We’re exploring new ways to support our school community and would love to apply for grants — but we need someone with experience to guide us.</p>
-        <p>If you have a background in grant writing or know someone who does, we’d really appreciate your help. Please comment below or send us a message if you’re interested in volunteering or connecting us with someone who might be a good fit.</p>
-        <a class="button" href="mailto:SMSPTO@sharonschools.net?subject=Help%20write%20a%20grant">Email Us</a>
+        <div><p>We’re exploring new ways to support our school community and would love to apply for grants — but we need someone with experience to guide us.</p>
+          <p>If you have a background in grant writing or know someone who does, we’d really appreciate your help. Please comment below or send us a message if you’re interested in volunteering or connecting us with someone who might be a good fit.</p>
+          <a class="button" href="mailto:SMSPTO@sharonschools.net?subject=Help%20write%20a%20grant">Email Us</a></div>
       </article>
       <article id="team-rep">
         <h2>Become a Team Rep</h2>
-        <p>Volunteers serve as a resource for teachers on each team. This could look like organizing a supply drive throughout the year or reaching to the teachers before PTO meetings for any updates. We still need a parent rep for World Languages and for Specialists.</p>
-        <a class="button" href="mailto:SMSPTO@sharonschools.net?subject=Team%20Rep%20Volunteer">Email Us</a>
+        <div><p>Volunteers serve as a resource for teachers on each team. This could look like organizing a supply drive throughout the year or reaching to the teachers before PTO meetings for any updates. We still need a parent rep for World Languages and for Specialists.</p>
+          <a class="button" href="mailto:SMSPTO@sharonschools.net?subject=Team%20Rep%20Volunteer">Email Us</a></div>
       </article>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .volunteer-benefits p { padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
-  .quick-links { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin-top: 1.5rem; }
-  .quick-links a { padding: .9rem; color: var(--burgundy); background: var(--cream); font-weight: 700; text-decoration: none; }
-  .action-list { border-top: 1px solid var(--line); }
-  .action-list a { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); color: var(--burgundy); font-weight: 700; text-decoration: none; }
-  .action-list a:hover { color: #000; }
-  .opportunity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
-  .opportunity-grid h2 { margin: 0 0 1rem; color: var(--gold); font-family: 'Calistoga', Georgia, serif; font-size: 2.2rem; font-weight: 400; }
-  @media (max-width: 720px) { .quick-links, .opportunity-grid { grid-template-columns: 1fr; } .opportunity-grid { gap: 3.5rem; } }
+  .volunteer-intro { height: 516px; padding: 43px 0 24px; background: var(--cream); }
+  .volunteer-intro .display-title { text-align: center; }
+  .volunteer-intro h2 { width: 850px; margin: 27px auto 32px; color: var(--burgundy); font-family: 'Calistoga', Georgia, serif; font-size: 36px; line-height: 1.1; font-weight: 400; text-align: center; }
+  .volunteer-intro-grid { display: grid; grid-template-columns: 566px 296px; gap: 41px; }
+  .volunteer-benefits p { margin: 0 0 23px; }
+  .quick-links { align-self: start; padding: 18px 26px; border: 1px solid var(--burgundy); }
+  .quick-links ul { margin: 0; padding-left: 1.2rem; }
+  .quick-links li { margin: 3px 0; }
+  .quick-links a { color: #000; font-weight: 700; }
+  .volunteer-row { background: #fff; }
+  .volunteer-fundraising { height: 743px; padding: 104px 0 24px; overflow: hidden; font-size: 14px; line-height: 1.35; }
+  .volunteer-row .split-wide { grid-template-columns: 341px 1fr; gap: 49px; }
+  .volunteer-row h2,
+  .volunteer-opportunities h2 { margin: 0; color: #000; font-family: 'Lulo Clean', sans-serif; font-size: 22px; line-height: 1.1; letter-spacing: 0; font-weight: 400; text-transform: uppercase; }
+  .volunteer-row .lead { font-size: 16px; line-height: 1.4; }
+  .volunteer-row li { margin: 2px 0; }
+  #events { height: 287px; padding: 48px 0 24px; border-top: 1px solid var(--line); }
+  .action-list a { display: block; color: #000; text-decoration: underline; }
+  .volunteer-opportunities article { display: grid; grid-template-columns: 341px 1fr; gap: 49px; border-top: 1px solid var(--line); }
+  .volunteer-opportunities article:first-child { height: 291px; padding: 54px 0 24px; }
+  .volunteer-opportunities article:last-child { height: 228px; padding: 40px 0 20px; }
+  .volunteer-opportunities article p { margin-bottom: 1.2rem; }
+  .volunteer-opportunities .button { width: 150px; }
+  @media (max-width: 820px) {
+    .volunteer-intro { height: auto; padding: 54px 0; }
+    .volunteer-intro h2 { width: auto; font-size: 30px; }
+    .volunteer-intro-grid, .volunteer-row .split-wide { grid-template-columns: 1fr; }
+    .volunteer-opportunities article, .volunteer-opportunities article:first-child, .volunteer-opportunities article:last-child { height: auto; grid-template-columns: 1fr; gap: 24px; padding: 54px 0; }
+    .volunteer-fundraising, #events { height: auto; padding: 54px 0; overflow: visible; font-size: 16px; line-height: 1.4; }
+  }
 </style>

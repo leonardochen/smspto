@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://smspto.org',
+  site: 'https://new.sharonmiddlepto.org',
   output: 'static',
 });
