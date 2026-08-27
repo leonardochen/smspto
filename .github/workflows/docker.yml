@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   docker:
+    name: Build and push image
     runs-on: ubuntu-latest
 
     steps:
@@ -31,8 +32,14 @@ jobs:
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ github.ref_name }}
 
+  deploy:
+    name: Restart production deployment
+    if: github.ref_name == 'main'
+    needs: docker
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Restart deployment
-        if: github.ref_name == 'main'
         env:
           K8S_RESTART_TOKEN: ${{ secrets.K8S_RESTART_TOKEN }}
         run: |
