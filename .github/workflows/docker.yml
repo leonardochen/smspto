@@ -30,3 +30,15 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ github.ref_name }}
+
+      - name: Restart deployment
+        if: github.ref_name == 'main'
+        env:
+          K8S_RESTART_TOKEN: ${{ secrets.K8S_RESTART_TOKEN }}
+        run: |
+          curl --fail-with-body --silent --show-error --retry 3 \
+            --request POST \
+            --header "Authorization: Bearer ${K8S_RESTART_TOKEN}" \
+            --header "Content-Type: application/json" \
+            --data '{"name":"web","namespace":"smspto","resource_type":"deployment"}' \
+            https://kubes1-restart.somagroup.com.br/restart
